@@ -1,24 +1,30 @@
 import { useState,useEffect } from "react";
 import { useWeb3Context } from "../../context/useWeb3Context";
-import './CandidateList.css'
+import { useNavigate } from "react-router-dom";
+import "./CandidateList.css"
 const CandidatesList = () => {
     const {web3State} = useWeb3Context();
     const {contractInstance}=web3State; 
     const [candidateList,setCandidateList]=useState([])
-
-    
-      useEffect(()=>{
-        const displayCandidatesList = async()=>{
-          try {
+    const token = localStorage.getItem("token")
+    const navigateTo = useNavigate()
+    useEffect(()=>{
+      if(!token){
+        navigateTo("/")
+      }
+    },[navigateTo,token])
+    useEffect(()=>{
+      const displayCandidatesList = async()=>{
+        try {
             const candidateArray = await contractInstance.candidateList();
-            console.log(candidateArray);
-            setCandidateList(candidateArray);
-          }catch (error) {
-            console.log(error.message);
-    }}
-    contractInstance && displayCandidatesList()
-  },[contractInstance])
-    
+            console.log(candidateArray)
+            setCandidateList(candidateArray)         
+        } catch (error) {
+           console.log(error.message) 
+        }
+      }
+      contractInstance && displayCandidatesList()
+    },[contractInstance])
     return ( <div className="candidate-list-table-container">
     {candidateList.length!==0?(<table className="candidate-list-table">
         <thead>
