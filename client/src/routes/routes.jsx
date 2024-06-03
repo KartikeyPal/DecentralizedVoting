@@ -6,6 +6,7 @@ import NavigationBar from "../components/NavigationBar/NavigationBar";
 import ElectionCommision from "../pages/ElectionCommision/ElectionCommision";
 import CandidatesList from "../pages/Candidate/CandidateList";
 import VoterList from "../pages/Voter/VoterList";
+import TokenExchange from "../pages/TokenExchange/TokenExchange";
 
 export const routes = createBrowserRouter([
     {path:"/",element:<Wallet/>},
@@ -42,5 +43,11 @@ export const routes = createBrowserRouter([
             <NavigationBar/>
             <ElectionCommision/>
         </div>
-)}
+    )},
+    {path:"/token-exchange",element:(
+        <div>
+            <NavigationBar/>
+            <TokenExchange/>
+        </div>
+    )}
 ])

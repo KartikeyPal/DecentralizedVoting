@@ -34,6 +34,11 @@ const NavigationBar = () => {
               Election Commission
             </Link>
           </li>):(<div></div>)}
+          <li>
+            <Link to="/token-exchange">
+              Token Exchange
+            </Link>
+          </li>
         </ul>  
       </nav>
     </header>

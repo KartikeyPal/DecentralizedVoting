@@ -1,4 +1,4 @@
 This is for Testing purpose
 voting contract address=>    "0xd6b0C9E2BB0bBD401C300254F45cE9a9aA37fFBc"
-Token Address =>   "0x4bAae3bf6F5e85d694D2b6F6fEE1540Ff4f98643"
+TokenExchange Address =>   "0xB01460004d093b11C840e81043B05e1cb90314a0"
 

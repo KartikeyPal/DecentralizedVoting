@@ -34,7 +34,7 @@ export const getWeb3State = async()=>{
 
       const contractAddress = "0xd6b0C9E2BB0bBD401C300254F45cE9a9aA37fFBc";//use Dotenv in future
       contractInstance = new ethers.Contract(contractAddress,abi,signer);
-      return {contractInstance,chainId,selectedAccount,electionCommissionStatus};
+      return {contractInstance,chainId,selectedAccount,electionCommissionStatus,provider,signer};
   } catch (error) {
     console.error("Not able to get the web3states",error.message);
     throw error;
